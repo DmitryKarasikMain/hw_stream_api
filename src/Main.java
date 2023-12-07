@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("================= 1 задание =================");
         IntStream intStream = createRandomIntStream();
 
         List<Integer> nums =
@@ -24,13 +25,23 @@ public class Main {
                 intStream
                         .reduce(0, (acc, x) -> acc + x);
 
-        System.out.println(nums);
-        System.out.println(evenNumsCount);
-        System.out.println(intStreamSum);
-        System.out.println("==================");
 
         createRandomIntStream()
                 .mapToObj(x -> Integer.toString(x))
+                .forEach(x -> System.out.println(x));
+        System.out.println(nums);
+        System.out.println(evenNumsCount);
+        System.out.println(intStreamSum);
+        System.out.println("================= 2 задание =================");
+
+        List<String> strs = List.of(
+                "qwe", "QWErty", "xzcv 123", "a",
+                "sfgsdg s", "xz23a sdasda", "a2", "sdgs"
+        );
+
+        strs.stream()
+                .filter(x -> x.length() > 3)
+                .map(x -> x.toUpperCase())
                 .forEach(x -> System.out.println(x));
     }
 
